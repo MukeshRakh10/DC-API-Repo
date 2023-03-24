@@ -5,8 +5,6 @@ spring:
 #    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto:  update
-    
-
   application:
     name: DC-API
     
