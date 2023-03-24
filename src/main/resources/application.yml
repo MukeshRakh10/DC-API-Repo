@@ -1,0 +1,29 @@
+server.port : 8082
+
+spring:
+  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto:  update
+    
+
+  application:
+    name: dc-api
+    
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysqldb:3306/arapidb
+    username: root
+    password: root
+    
+  boot:
+    admin:
+      client:
+          url: http://localhost:1111/
+ #Includes all acturators. 
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
