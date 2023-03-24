@@ -12,10 +12,10 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
-@Configuration
+//@Configuration
 public class KafkaProducerConfig {
 
-	@Bean
+	//@Bean
 	public Map<String, Object> producerConfigs() {
 		Map<String, Object> props = new HashMap<String,Object>();
 		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
@@ -24,12 +24,12 @@ public class KafkaProducerConfig {
 		return props;
 	}
 
-	@Bean
+	//@Bean
 	public ProducerFactory<String, Object> producerFactory() {
 		return new DefaultKafkaProducerFactory<>(producerConfigs());
 	}
 	
-	@Bean(name = "kafkaTemplate")
+//	@Bean(name = "kafkaTemplate")
 	public KafkaTemplate< String, Object> kafkaTemplate(){
 		return new  KafkaTemplate<>(producerFactory());
 	}
